@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr 30px; /* Header - Main (Section) - Footer */
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #6a5acd; /* Color lavanda suave */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ===== SECTION (Contenedor Principal) ===== */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor de la semana */
+.week {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(2, 1fr); /* 2 filas */
+    gap: 20px;
+    max-width: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Distribución de los días en el grid */
+#monday { grid-column: 1; grid-row: 1; }
+#tuesday { grid-column: 2; grid-row: 1; }
+#wednesday { grid-column: 3; grid-row: 1; }
+#thursday { grid-column: 1; grid-row: 2; }
+#friday { grid-column: 2; grid-row: 2; }
+.notes { grid-column: 3; grid-row: 2; } /* Notas ocupa la última celda */
+
+/* Día individual */
+.day, .note {
+    background-color: #dcd6f7; /* Un lavanda más claro */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del día */
+.day-header {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Notas */
+/*.note {
+    grid-column: span 2;
+    background-color: #b22020;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}*/
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #6a5acd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
