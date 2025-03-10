@@ -1,27 +1,36 @@
+@font-face {
+    font-family: "Merienda-Regular";
+    src: url("fonts/Merienda-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-rows: 100px 1fr 30px; /* Header - Main (Section) - Footer */
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+    background-color: #F8EBF1;
+    background-image: url("images/bg.png");
+    font-family: "Merienda-Regular", Arial, sans-serif;
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: #6a5acd; /* Color lavanda suave */
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
+    letter-spacing: 8px;
 }
 
 /* ===== SECTION (Contenedor Principal) ===== */
@@ -51,21 +60,65 @@ section {
 #friday { grid-column: 2; grid-row: 2; }
 .notes { grid-column: 3; grid-row: 2; } /* Notas ocupa la última celda */
 
-/* Día individual */
-.day, .note {
-    background-color: #dcd6f7; /* Un lavanda más claro */
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+#monday, #friday {
+    background-color: #DBD9FF;
+}
+#tuesday, #thursday {
+    background-color: #FBDCEB;
+}
+#wednesday {
+    background-color: #CFF6F5;
+}
+.note {
+    background-color: #FFFBF9;
 }
 
+/* Día individual */
+.day, .note {
+    border-radius: 12px;
+    padding: 25px 30px 25px 30px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    border-radius: 30px;
+}
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro del día */
+}
+
+.day-content, .note-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: 100%;
+
+}
 /* Título del día */
-.day-header {
+.day-header, .note-header {
     background-color: white;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 5px;
+    margin: 0px 20px;
+    border-radius: 20px 20px 10px 10px;
     text-align: center;
     font-weight: bold;
+    font-size: 24px;
+}
+.note-header {
+    background-color: #FBEBE4;
+}
+
+.task-list, .note-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.task-list li, .note-section li{
+    padding: 8px;
+    margin-bottom: 5px;
+    font-size: 22px;
 }
 
 /* Notas */
@@ -79,7 +132,6 @@ section {
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #6a5acd;
     color: white;
     display: flex;
     align-items: center;
