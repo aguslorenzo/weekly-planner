@@ -70,3 +70,7 @@ document.addEventListener("click", (e) => {
         e.target.focus();
     }
 });
+document.getElementById("resetTasks").addEventListener("click", async () => {
+    await fetch("http://localhost:8080/tasks", { method: "DELETE" });
+    document.querySelectorAll("ul").forEach(ul => ul.innerHTML = "");
+});
