@@ -7,6 +7,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "\"day\"")
     private String day;
     private String text;
     public Task(){};
