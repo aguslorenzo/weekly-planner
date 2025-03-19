@@ -84,7 +84,9 @@ section {
 .day {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido dentro del día */
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .day-content, .note-content {
@@ -111,24 +113,26 @@ section {
 .task-list, .note-section {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     padding: 20px;
 }
-.task-list li, .note-section li{
+.task-list li, .note-section textarea {
     padding: 8px;
     margin-bottom: 5px;
     font-size: 22px;
 }
 
 /* Notas */
-/*.note {
-    grid-column: span 2;
-    background-color: #b22020;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-}*/
+.note-section textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+}
 
 /* ===== FOOTER ===== */
 footer {
