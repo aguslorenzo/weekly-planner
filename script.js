@@ -26,6 +26,7 @@ async function saveTask(day, text) {
         body: JSON.stringify({ day, text })
     });
 }
+
 document.querySelectorAll(".day").forEach(day => {
     day.addEventListener("click", async(e) => {
         if (e.target.tagName === "LI") {
@@ -70,7 +71,7 @@ document.addEventListener("click", (e) => {
         e.target.focus();
     }
 });
-document.getElementById("resetTasks").addEventListener("click", async () => {
+document.querySelector(".refresh-week-btn").addEventListener("click", async () => {
     await fetch("http://localhost:8080/tasks", { method: "DELETE" });
     document.querySelectorAll("ul").forEach(ul => ul.innerHTML = "");
 });
